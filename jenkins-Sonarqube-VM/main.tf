@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   ami                    = "ami-0f918f7e67a3323f0"
   instance_type          = "t2.large"
-  key_name               = "proj-key"
+  key_name               = "jenkins"
   vpc_security_group_ids = [aws_security_group.Jenkins-VM-SG.id]
   user_data              = templatefile("./install.sh", {})
 
